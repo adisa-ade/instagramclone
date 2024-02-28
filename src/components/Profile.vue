@@ -8,8 +8,7 @@ const addNewPost = (post) => {
     posts.value.unshift(post)
 }
 </script>
-<template>    
-    
+<template>        
     <Container>
         <div class="profile-container">
         <UserBar

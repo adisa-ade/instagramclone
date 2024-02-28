@@ -13,7 +13,7 @@ import { storeToRefs } from "pinia";
     <div class="user-container">
     <div class="top-content">
         <a-typography-title :level="1">{{props.userName.toUpperCase()}}</a-typography-title>  
-        <UploadPhotoModal v-if="user && profileUserName === user.username" :addNewPost="props.addNewPost"/>
+        <UploadPhotoModal v-if="user && profileUserName === user.username" :addNewPost="addNewPost"/>
     </div>
     <div class="bottom-content">
         <a-typography-title :level="5" style="margin:0; font-size:20px;">{{props.userInfo.posts}} Post</a-typography-title>

@@ -6,9 +6,9 @@
         <img 
         v-for="post in props.posts"
         :key="post.id"
-        :src="post.url" 
+        :src="`https://sbkvvjrkfojvcshpmugo.supabase.co/storage/v1/object/public/profilepics/${post.url}`"
         alt=""
-        >
+        >        
     </div>
 </template>
 <style scoped>
@@ -16,5 +16,8 @@
     display: flex;
     justify-content: left;
     flex-wrap: wrap;
+}
+img{
+    width: 200px;
 }
 </style>
