@@ -39,7 +39,7 @@ const handleLogout = async () => {
     <Container>
         <div class="left-content">
             <RouterLink to="/">
-                <a-menu-item key="3">InstaNaija</a-menu-item>
+                <a-menu-item key="3" style="background-color:#001529">InstaNaija</a-menu-item>
             </RouterLink>    
             <a-input-search
             v-model:value="searchUsername"
