@@ -1,18 +1,18 @@
 <script setup>
-const props = defineProps (['userName', 'userInfo', 'addNewPost'])    
+const props = defineProps (['user', 'userInfo', 'addNewPost'])    
 import UploadPhotoModal from "./UploadPhotoModal.vue"
 import {useRoute} from "vue-router"
 import { useUserStore } from "@/stores/users";
 import { storeToRefs } from "pinia";
     const route = useRoute()    
     const userStore = useUserStore()
-    const {user} = storeToRefs(userStore)    
+    const {user} = storeToRefs(userStore)        
     const {username: profileUserName} = route.params  
 </script>
 <template>
-    <div class="user-container">
+    <div class="user-container" v-if="props.user">
     <div class="top-content">
-        <a-typography-title :level="1">{{props.userName.toUpperCase()}}</a-typography-title>  
+        <a-typography-title :level="1">{{props.user.username.toUpperCase()}}</a-typography-title>  
         <UploadPhotoModal v-if="user && profileUserName === user.username" :addNewPost="addNewPost"/>
     </div>
     <div class="bottom-content">
@@ -20,7 +20,12 @@ import { storeToRefs } from "pinia";
         <a-typography-title :level="5" style="margin:0; font-size:20px;">{{props.userInfo.followers}} Followers</a-typography-title>
         <a-typography-title :level="5" style="margin:0; font-size:20px;">{{props.userInfo.following}} Following</a-typography-title>
     </div>
-    </div>            
+    </div>           
+    <div class="user-container" v-else>
+        <div class="top-content">
+        <a-typography-title :level="1">User Not Found</a-typography-title>          
+    </div>
+    </div> 
 </template>
 <style scoped>
 .top-content{

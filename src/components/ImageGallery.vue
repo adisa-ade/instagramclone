@@ -13,11 +13,21 @@
 </template>
 <style scoped>
 .image-gallery-container{
+    margin: 20px 0;
     display: flex;
     justify-content: left;
     flex-wrap: wrap;
+    gap: 28px;
 }
 img{
-    width: 200px;
+    width: 235px;
+    height: 230px;
+    object-fit: cover;    
+    cursor: pointer;    
+    border-radius: 10px;
+}
+img:hover{
+    transform: scale(1.1);
+    transition: 0.5s ease-in;
 }
 </style>
