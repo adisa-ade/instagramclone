@@ -2,5 +2,5 @@
 import Profile from "../components/Profile.vue"
 </script>
 <template>  
-    <Profile/>  
+    <Profile :key="$route.params.username"/>  
 </template>
